@@ -1,0 +1,12 @@
+{
+    "folder": "\\",
+    "id": 8,
+    "name": "Space Game - web",
+    "revision": 1,
+    "_links": {},
+    "configuration": {
+        "type": "yaml"
+    },
+    "url": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/pipelines/8?revision=1",
+    "yaml_content": "<<<<<<< HEAD\npool: MyAgentPool\r\nsteps:\r\n- bash: echo hello world\n=======\ntrigger:\n- '*'\n\npool:\n  vmImage: 'ubuntu-20.04'\n  demands:\n  - npm\n\nvariables:\n  buildConfiguration: 'Release'\n  wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'\n  dotnetSdkVersion: '8.x'\n\nsteps:\n- task: UseDotNet@2\n  displayName: 'Use .NET SDK $(dotnetSdkVersion)'\n  inputs:\n    version: '$(dotnetSdkVersion)'\n\n- task: Npm@1\n  displayName: 'Run npm install'\n  inputs:\n    verbose: false\n\n- script: './node_modules/.bin/node-sass $(wwwrootDir) --output $(wwwrootDir)'\n  displayName: 'Compile Sass assets'\n\n- task: gulp@1\n  displayName: 'Run gulp tasks'\n\n- script: 'echo \"$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)\" > buildinfo.txt'\n  displayName: 'Write build info'\n  workingDirectory: $(wwwrootDir)\n\n- task: DotNetCoreCLI@2\n  displayName: 'Restore project dependencies'\n  inputs:\n    command: 'restore'\n    projects: '**/*.csproj'\n\n- template: templates/build.yml\n  parameters:\n    buildConfiguration: 'Debug'\n\n- template: templates/build.yml\n  parameters:\n    buildConfiguration: 'Release'\n\n- task: PublishBuildArtifacts@1\n  displayName: 'Publish Artifact: drop'\n  condition: succeeded()\n>>>>>>> build-agent\n"
+}

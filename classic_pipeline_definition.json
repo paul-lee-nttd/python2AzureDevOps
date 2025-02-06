@@ -1,0 +1,196 @@
+{
+    "options": [
+        {
+            "enabled": false,
+            "definition": {
+                "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+            },
+            "inputs": {
+                "branchFilters": "[\"+refs/heads/*\"]",
+                "additionalFields": "{}"
+            }
+        },
+        {
+            "enabled": false,
+            "definition": {
+                "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+            },
+            "inputs": {
+                "workItemType": "Issue",
+                "assignToRequestor": "true",
+                "additionalFields": "{}"
+            }
+        }
+    ],
+    "variables": {
+        "system.debug": {
+            "value": "false",
+            "allowOverride": true
+        }
+    },
+    "properties": {},
+    "tags": [],
+    "_links": {
+        "self": {
+            "href": "https://dev.azure.com/177204/0eb0a2e8-97aa-46f5-a3c9-f550ee6fdeea/_apis/build/Definitions/4?revision=1"
+        },
+        "web": {
+            "href": "https://dev.azure.com/177204/0eb0a2e8-97aa-46f5-a3c9-f550ee6fdeea/_build/definition?definitionId=4"
+        },
+        "editor": {
+            "href": "https://dev.azure.com/177204/0eb0a2e8-97aa-46f5-a3c9-f550ee6fdeea/_build/designer?id=4&_a=edit-build-definition"
+        },
+        "badge": {
+            "href": "https://dev.azure.com/177204/0eb0a2e8-97aa-46f5-a3c9-f550ee6fdeea/_apis/build/status/4"
+        }
+    },
+    "jobAuthorizationScope": "project",
+    "jobTimeoutInMinutes": 60,
+    "jobCancelTimeoutInMinutes": 5,
+    "process": {
+        "phases": [
+            {
+                "steps": [
+                    {
+                        "environment": {},
+                        "enabled": true,
+                        "continueOnError": true,
+                        "alwaysRun": true,
+                        "displayName": "Task group: Export PreRequisite $(ConnectionString.From)",
+                        "timeoutInMinutes": 0,
+                        "retryCountOnTaskFailure": 0,
+                        "condition": "succeededOrFailed()",
+                        "task": {
+                            "id": "737f05f9-f3c1-4c9e-b494-609e780f3dcb",
+                            "versionSpec": "1.*",
+                            "definitionType": "metaTask"
+                        },
+                        "inputs": {
+                            "ConnectionString.From": "$(ConnectionString.From)"
+                        }
+                    }
+                ],
+                "name": "Export Prerequisite Task",
+                "refName": "Job_1",
+                "condition": "succeeded()",
+                "target": {
+                    "executionOptions": {
+                        "type": 0
+                    },
+                    "allowScriptsAuthAccessOption": false,
+                    "type": 1
+                },
+                "jobAuthorizationScope": "project"
+            },
+            {
+                "steps": [
+                    {
+                        "environment": {},
+                        "enabled": true,
+                        "continueOnError": true,
+                        "alwaysRun": true,
+                        "displayName": "Task group: DynamicsDeployment Export and Publish Task $(ConnectionString.From)",
+                        "timeoutInMinutes": 0,
+                        "retryCountOnTaskFailure": 0,
+                        "condition": "succeededOrFailed()",
+                        "task": {
+                            "id": "7c0a1ef5-aeb4-4a63-821b-0e11990172ff",
+                            "versionSpec": "1.*",
+                            "definitionType": "metaTask"
+                        },
+                        "inputs": {
+                            "ConnectionStringFrom": "$(ConnectionString.From)",
+                            "DynamicsDeployment.SolutionName": "$(Solutions)",
+                            "DynamicsDeployment.SolutionVersion": "$(DynamicsDeployment.SolutionVersion)"
+                        }
+                    }
+                ],
+                "name": "Export and Publish Task",
+                "refName": "Job_2",
+                "condition": "succeeded()",
+                "target": {
+                    "executionOptions": {
+                        "type": 0
+                    },
+                    "allowScriptsAuthAccessOption": false,
+                    "type": 1
+                },
+                "jobAuthorizationScope": "project"
+            }
+        ],
+        "target": {
+            "agentSpecification": {
+                "identifier": "windows-2019"
+            }
+        },
+        "type": 1
+    },
+    "repository": {
+        "properties": {
+            "cleanOptions": "0",
+            "labelSources": "0",
+            "labelSourcesFormat": "$(build.buildNumber)",
+            "reportBuildStatus": "true",
+            "fetchDepth": "1",
+            "gitLfsSupport": "false",
+            "skipSyncSource": "false",
+            "checkoutNestedSubmodules": "false"
+        },
+        "id": "54cad38b-aef0-4af6-b8e8-a8beaabadf48",
+        "type": "TfsGit",
+        "name": "DynamicsDeployment",
+        "url": "https://dev.azure.com/177204/DynamicsDeployment/_git/DynamicsDeployment",
+        "defaultBranch": "refs/heads/main",
+        "clean": "false",
+        "checkoutSubmodules": false
+    },
+    "processParameters": {},
+    "quality": "definition",
+    "authoredBy": {
+        "displayName": "Paul Lee",
+        "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+        "_links": {
+            "avatar": {
+                "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            }
+        },
+        "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+        "uniqueName": "177204@NTTDATA.COM",
+        "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+        "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+    },
+    "drafts": [],
+    "queue": {
+        "_links": {
+            "self": {
+                "href": "https://dev.azure.com/177204/_apis/build/Queues/36"
+            }
+        },
+        "id": 36,
+        "name": "Azure Pipelines",
+        "url": "https://dev.azure.com/177204/_apis/build/Queues/36",
+        "pool": {
+            "id": 9,
+            "name": "Azure Pipelines",
+            "isHosted": true
+        }
+    },
+    "id": 4,
+    "name": "DynamicsDeployment-CI",
+    "url": "https://dev.azure.com/177204/0eb0a2e8-97aa-46f5-a3c9-f550ee6fdeea/_apis/build/Definitions/4?revision=1",
+    "uri": "vstfs:///Build/Definition/4",
+    "path": "\\",
+    "type": "build",
+    "queueStatus": "enabled",
+    "revision": 1,
+    "createdDate": "2023-09-15T01:19:02.83Z",
+    "project": {
+        "id": "0eb0a2e8-97aa-46f5-a3c9-f550ee6fdeea",
+        "name": "DynamicsDeployment",
+        "url": "https://dev.azure.com/177204/_apis/projects/0eb0a2e8-97aa-46f5-a3c9-f550ee6fdeea",
+        "state": "wellFormed",
+        "revision": 35,
+        "visibility": "private",
+        "lastUpdateTime": "2023-09-14T23:30:03.653Z"
+    }
+}
