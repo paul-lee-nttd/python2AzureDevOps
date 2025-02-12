@@ -1,6 +1,7 @@
 import json
 import requests
 from base64 import b64encode
+import config_import_classic
 
 def import_classic_pipeline(organization, project, personal_access_token, new_pipeline_name, input_file):
     # Read the exported classic pipeline definition from the JSON file
@@ -38,14 +39,17 @@ def import_classic_pipeline(organization, project, personal_access_token, new_pi
         print(f'An error occurred while creating the new classic pipeline: {e}')
 
 def main():
-    # Define variables
-    organization = '177204'
-    project = 'PSRemoting-Test'
-    personal_access_token = 'G2JAC9cbPJqH6y7albiNkRwapB13gaQLtyWixOFeaS31h5kAQzwjJQQJ99BBACAAAAAe37ZBAAASAZDO1aX7'
-    new_pipeline_name = 'NewClassicPipeline2'
-    input_file = 'outputs/classic_pipeline_definition.json'
-
-    import_classic_pipeline(organization, project, personal_access_token, new_pipeline_name, input_file)
+    # Import the configuration variables
+    import config_import_classic
+    
+    # Call the function to import the classic pipeline
+    import_classic_pipeline(
+        config_import_classic.organization, 
+        config_import_classic.project, 
+        config_import_classic.personal_access_token, 
+        config_import_classic.new_pipeline_name, 
+        config_import_classic.input_file
+    )
 
 if __name__ == '__main__':
     main()

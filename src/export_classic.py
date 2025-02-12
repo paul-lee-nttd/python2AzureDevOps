@@ -1,6 +1,11 @@
 import json
 import requests
 from base64 import b64encode
+import os
+import sys
+
+# Add the src directory to the Python path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 def export_classic_pipeline(organization, project, personal_access_token, pipeline_id, output_file):
     # Encode the personal access token
@@ -9,10 +14,7 @@ def export_classic_pipeline(organization, project, personal_access_token, pipeli
     # Get the classic pipeline details using the REST API
     try:
         print(f'Getting classic pipeline details for pipeline ID: {pipeline_id}')
-        #print(f'Getting classic pipeline details for organization: {organization}')
-        #print(f'Getting classic pipeline details for project: {project}')
-        #print(f'Getting classic pipeline details for personal_access_token: {personal_access_token}')
-
+        
         url = f'https://dev.azure.com/{organization}/{project}/_apis/build/definitions/{pipeline_id}?api-version=6.0'
         headers = {
             'Content-Type': 'application/json',
@@ -29,7 +31,7 @@ def export_classic_pipeline(organization, project, personal_access_token, pipeli
             # Export the pipeline definition to a JSON file
             with open(output_file, 'w') as f:
                 json.dump(pipeline_definition, f, indent=4)
-            print(f'Classic pipeline definition has been exported to {output_file} ')
+            print(f'Classic pipeline definition has been exported to {output_file}')
         else:
             raise Exception(f'Failed to get classic pipeline details. Status code: {response.status_code}, Response: {response.text}')
     except Exception as e:
@@ -37,19 +39,16 @@ def export_classic_pipeline(organization, project, personal_access_token, pipeli
 
 def main():
     # Import the configuration variables
-    import src.config_classic as config_classic
+    import config_classic as config_classic
     
     # Call the function to export the classic pipeline
-    export_classic_pipeline(config_classic.organization, config_classic.project, config_classic.personal_access_token, config_classic.pipeline_id, config_classic.output_file)
+    export_classic_pipeline(
+        config_classic.organization, 
+        config_classic.project, 
+        config_classic.personal_access_token, 
+        config_classic.pipeline_id, 
+        config_classic.output_file
+    )
 
 if __name__ == '__main__':
-
     main()
-    # Define variables
-   # organization = '177204'
-   #project = 'PSRemoting-Test'
-   # personal_access_token = 'G2JAC9cbPJqH6y7albiNkRwapB13gaQLtyWixOFeaS31h5kAQzwjJQQJ99BBACAAAAAe37ZBAAASAZDO1aX7'
-   # pipeline_id = 1
-   # output_file = 'configs/classic_pipeline_definition.json'
-
-   # export_classic_pipeline(organization, project, personal_access_token, pipeline_id, output_file)

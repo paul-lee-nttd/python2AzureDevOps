@@ -1,0 +1,170 @@
+{
+    "options": [
+        {
+            "enabled": false,
+            "definition": {
+                "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+            },
+            "inputs": {
+                "branchFilters": "[\"+refs/heads/*\"]",
+                "additionalFields": "{}"
+            }
+        },
+        {
+            "enabled": false,
+            "definition": {
+                "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+            },
+            "inputs": {
+                "workItemType": "Issue",
+                "assignToRequestor": "true",
+                "additionalFields": "{}"
+            }
+        }
+    ],
+    "variables": {
+        "system.debug": {
+            "value": "false",
+            "allowOverride": true
+        }
+    },
+    "properties": {},
+    "tags": [],
+    "_links": {
+        "self": {
+            "href": "https://dev.azure.com/177204/f651d8ce-127a-4734-b828-1544f999896b/_apis/build/Definitions/3?revision=1"
+        },
+        "web": {
+            "href": "https://dev.azure.com/177204/f651d8ce-127a-4734-b828-1544f999896b/_build/definition?definitionId=3"
+        },
+        "editor": {
+            "href": "https://dev.azure.com/177204/f651d8ce-127a-4734-b828-1544f999896b/_build/designer?id=3&_a=edit-build-definition"
+        },
+        "badge": {
+            "href": "https://dev.azure.com/177204/f651d8ce-127a-4734-b828-1544f999896b/_apis/build/status/3"
+        }
+    },
+    "comment": "1",
+    "jobAuthorizationScope": "projectCollection",
+    "jobTimeoutInMinutes": 60,
+    "jobCancelTimeoutInMinutes": 5,
+    "process": {
+        "phases": [
+            {
+                "steps": [
+                    {
+                        "environment": {},
+                        "enabled": true,
+                        "continueOnError": false,
+                        "alwaysRun": false,
+                        "displayName": "PowerShell Script",
+                        "timeoutInMinutes": 0,
+                        "retryCountOnTaskFailure": 0,
+                        "condition": "succeeded()",
+                        "task": {
+                            "id": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
+                            "versionSpec": "2.*",
+                            "definitionType": "task"
+                        },
+                        "inputs": {
+                            "targetType": "filePath",
+                            "filePath": "Invoke-Sqlcmd\u00a0-ServerInstance\u00a0$SQLServer\u00a0-Database\u00a0$db3\u00a0-Query\u00a0$qcd\u00a0-Username\u00a0\"User\"\u00a0-Password\u00a0\"Password\"\u00a0-Verbose",
+                            "arguments": "",
+                            "script": "# Write your PowerShell commands here.\n\nWrite-Host \"Hello World\"\n",
+                            "errorActionPreference": "stop",
+                            "failOnStderr": "false",
+                            "ignoreLASTEXITCODE": "false",
+                            "pwsh": "false",
+                            "workingDirectory": ""
+                        }
+                    }
+                ],
+                "name": "Agent job 1",
+                "refName": "Job_1",
+                "condition": "succeeded()",
+                "target": {
+                    "executionOptions": {
+                        "type": 0
+                    },
+                    "allowScriptsAuthAccessOption": false,
+                    "type": 1
+                },
+                "jobAuthorizationScope": "projectCollection"
+            }
+        ],
+        "target": {
+            "agentSpecification": {
+                "identifier": "vs2017-win2016"
+            }
+        },
+        "type": 1
+    },
+    "repository": {
+        "properties": {
+            "cleanOptions": "0",
+            "labelSources": "0",
+            "labelSourcesFormat": "$(build.buildNumber)",
+            "reportBuildStatus": "true",
+            "gitLfsSupport": "false",
+            "skipSyncSource": "false",
+            "checkoutNestedSubmodules": "false",
+            "fetchDepth": "0"
+        },
+        "id": "a7b07452-ceea-4423-9f3e-0cbf91999d5f",
+        "type": "TfsGit",
+        "name": "PSRemoting-Test",
+        "url": "https://dev.azure.com/177204/PSRemoting-Test/_git/PSRemoting-Test",
+        "defaultBranch": "refs/heads/master",
+        "clean": "false",
+        "checkoutSubmodules": false
+    },
+    "processParameters": {},
+    "quality": "definition",
+    "authoredBy": {
+        "displayName": "Paul Lee",
+        "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+        "_links": {
+            "avatar": {
+                "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            }
+        },
+        "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+        "uniqueName": "177204@NTTDATA.COM",
+        "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+        "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+    },
+    "drafts": [],
+    "queue": {
+        "_links": {
+            "self": {
+                "href": "https://dev.azure.com/177204/_apis/build/Queues/9"
+            }
+        },
+        "id": 9,
+        "name": "Azure Pipelines",
+        "url": "https://dev.azure.com/177204/_apis/build/Queues/9",
+        "pool": {
+            "id": 9,
+            "name": "Azure Pipelines",
+            "isHosted": true
+        }
+    },
+    "id": 3,
+    "name": "PSRemoting-Test-CI (1)",
+    "url": "https://dev.azure.com/177204/f651d8ce-127a-4734-b828-1544f999896b/_apis/build/Definitions/3?revision=1",
+    "uri": "vstfs:///Build/Definition/3",
+    "path": "\\",
+    "type": "build",
+    "queueStatus": "enabled",
+    "revision": 1,
+    "createdDate": "2020-10-01T20:10:18.883Z",
+    "project": {
+        "id": "f651d8ce-127a-4734-b828-1544f999896b",
+        "name": "PSRemoting-Test",
+        "url": "https://dev.azure.com/177204/_apis/projects/f651d8ce-127a-4734-b828-1544f999896b",
+        "state": "wellFormed",
+        "revision": 11,
+        "visibility": "private",
+        "lastUpdateTime": "2020-09-10T23:18:28.13Z"
+    }
+}

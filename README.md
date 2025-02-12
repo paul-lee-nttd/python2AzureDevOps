@@ -14,7 +14,7 @@ pip show azure-devops
 
 # configure the variables for exporting and imporing pipeline
 
-Update variables from /src/config.py
+Update variables from /src/config_classic.py
 
 
 # Execute exporting or importing
