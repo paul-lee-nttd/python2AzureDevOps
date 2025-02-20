@@ -1,0 +1,11 @@
+{
+    "dashboardEntries": [],
+    "permission": "none",
+    "teamDashboardPermission": "none",
+    "url": "https://dev.azure.com/177204/_apis/Dashboard/Dashboards",
+    "_links": {
+        "self": {
+            "href": "https://dev.azure.com/177204/_apis/Dashboard/Dashboards"
+        }
+    }
+}

@@ -39,15 +39,15 @@ def export_classic_pipeline(organization, project, personal_access_token, pipeli
 
 def main():
     # Import the configuration variables
-    import config_classic as config_classic
+    import pipelines.config_export_classic as config_export_classic
     
     # Call the function to export the classic pipeline
     export_classic_pipeline(
-        config_classic.organization, 
-        config_classic.project, 
-        config_classic.personal_access_token, 
-        config_classic.pipeline_id, 
-        config_classic.output_file
+        config_export_classic.organization, 
+        config_export_classic.project, 
+        config_export_classic.personal_access_token, 
+        config_export_classic.pipeline_id, 
+        config_export_classic.output_file
     )
 
 if __name__ == '__main__':

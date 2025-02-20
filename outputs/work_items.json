@@ -1,0 +1,527 @@
+[
+    {
+        "id": 1,
+        "rev": 1,
+        "fields": {
+            "System.AreaPath": "spacegamewebapp",
+            "System.TeamProject": "spacegamewebapp",
+            "System.IterationPath": "spacegamewebapp",
+            "System.WorkItemType": "Issue",
+            "System.State": "To Do",
+            "System.Reason": "Added to backlog",
+            "System.CreatedDate": "2025-01-29T02:37:34.153Z",
+            "System.CreatedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.ChangedDate": "2025-01-29T02:37:34.153Z",
+            "System.ChangedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.CommentCount": 0,
+            "System.Title": "Stabilize the build server",
+            "System.BoardColumn": "To Do",
+            "System.BoardColumnDone": false,
+            "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+            "Microsoft.VSTS.Common.StateChangeDate": "2025-01-29T02:37:34.153Z",
+            "Microsoft.VSTS.Common.Priority": 2,
+            "Microsoft.VSTS.Scheduling.Effort": 0.0,
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column": "To Do",
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column.Done": false,
+            "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;\">The build server keeps falling over. The OS, Ubuntu 16.04, requires security patches and updates. It's also a challenge to keep build tools and other software up to date</span><br></span> </div>"
+        },
+        "_links": {
+            "self": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/1"
+            },
+            "workItemUpdates": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/1/updates"
+            },
+            "workItemRevisions": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/1/revisions"
+            },
+            "workItemComments": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/1/comments"
+            },
+            "html": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_workitems/edit/1"
+            },
+            "workItemType": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItemTypes/Issue"
+            },
+            "fields": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/fields"
+            }
+        },
+        "url": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/1"
+    },
+    {
+        "id": 2,
+        "rev": 1,
+        "fields": {
+            "System.AreaPath": "spacegamewebapp",
+            "System.TeamProject": "spacegamewebapp",
+            "System.IterationPath": "spacegamewebapp",
+            "System.WorkItemType": "Issue",
+            "System.State": "To Do",
+            "System.Reason": "Added to backlog",
+            "System.CreatedDate": "2025-01-29T02:37:34.563Z",
+            "System.CreatedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.ChangedDate": "2025-01-29T02:37:34.563Z",
+            "System.ChangedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.CommentCount": 0,
+            "System.Title": "Create a Git-based workflow",
+            "System.BoardColumn": "To Do",
+            "System.BoardColumnDone": false,
+            "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+            "Microsoft.VSTS.Common.StateChangeDate": "2025-01-29T02:37:34.563Z",
+            "Microsoft.VSTS.Common.Priority": 2,
+            "Microsoft.VSTS.Scheduling.Effort": 0.0,
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column": "To Do",
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column.Done": false,
+            "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:13.93px;\">Migrate source code to GitHub and define how we'll collaborate</span><br></span> </div>"
+        },
+        "_links": {
+            "self": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/2"
+            },
+            "workItemUpdates": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/2/updates"
+            },
+            "workItemRevisions": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/2/revisions"
+            },
+            "workItemComments": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/2/comments"
+            },
+            "html": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_workitems/edit/2"
+            },
+            "workItemType": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItemTypes/Issue"
+            },
+            "fields": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/fields"
+            }
+        },
+        "url": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/2"
+    },
+    {
+        "id": 3,
+        "rev": 1,
+        "fields": {
+            "System.AreaPath": "spacegamewebapp",
+            "System.TeamProject": "spacegamewebapp",
+            "System.IterationPath": "spacegamewebapp",
+            "System.WorkItemType": "Issue",
+            "System.State": "To Do",
+            "System.Reason": "Added to backlog",
+            "System.CreatedDate": "2025-01-29T02:37:34.92Z",
+            "System.CreatedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.ChangedDate": "2025-01-29T02:37:34.92Z",
+            "System.ChangedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.CommentCount": 0,
+            "System.Title": "Create unit tests",
+            "System.BoardColumn": "To Do",
+            "System.BoardColumnDone": false,
+            "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+            "Microsoft.VSTS.Common.StateChangeDate": "2025-01-29T02:37:34.92Z",
+            "Microsoft.VSTS.Common.Priority": 2,
+            "Microsoft.VSTS.Scheduling.Effort": 0.0,
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column": "To Do",
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column.Done": false,
+            "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:13.93px;\">Add unit tests to the project so help minimize regression bugs</span><br></span> </div>"
+        },
+        "_links": {
+            "self": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/3"
+            },
+            "workItemUpdates": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/3/updates"
+            },
+            "workItemRevisions": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/3/revisions"
+            },
+            "workItemComments": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/3/comments"
+            },
+            "html": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_workitems/edit/3"
+            },
+            "workItemType": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItemTypes/Issue"
+            },
+            "fields": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/fields"
+            }
+        },
+        "url": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/3"
+    },
+    {
+        "id": 4,
+        "rev": 1,
+        "fields": {
+            "System.AreaPath": "spacegamewebapp",
+            "System.TeamProject": "spacegamewebapp",
+            "System.IterationPath": "spacegamewebapp",
+            "System.WorkItemType": "Issue",
+            "System.State": "To Do",
+            "System.Reason": "Added to backlog",
+            "System.CreatedDate": "2025-01-29T02:37:35.233Z",
+            "System.CreatedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.ChangedDate": "2025-01-29T02:37:35.233Z",
+            "System.ChangedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.CommentCount": 0,
+            "System.Title": "Check code for vulnerabilities",
+            "System.BoardColumn": "To Do",
+            "System.BoardColumnDone": false,
+            "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+            "Microsoft.VSTS.Common.StateChangeDate": "2025-01-29T02:37:35.233Z",
+            "Microsoft.VSTS.Common.Priority": 2,
+            "Microsoft.VSTS.Scheduling.Effort": 0.0,
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column": "To Do",
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column.Done": false,
+            "System.Description": "<div><span>Scan our code for vulnerabilities and code smells</span> </div>"
+        },
+        "_links": {
+            "self": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/4"
+            },
+            "workItemUpdates": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/4/updates"
+            },
+            "workItemRevisions": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/4/revisions"
+            },
+            "workItemComments": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/4/comments"
+            },
+            "html": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_workitems/edit/4"
+            },
+            "workItemType": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItemTypes/Issue"
+            },
+            "fields": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/fields"
+            }
+        },
+        "url": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/4"
+    },
+    {
+        "id": 5,
+        "rev": 1,
+        "fields": {
+            "System.AreaPath": "spacegamewebapp",
+            "System.TeamProject": "spacegamewebapp",
+            "System.IterationPath": "spacegamewebapp",
+            "System.WorkItemType": "Issue",
+            "System.State": "To Do",
+            "System.Reason": "Added to backlog",
+            "System.CreatedDate": "2025-01-29T02:37:35.573Z",
+            "System.CreatedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.ChangedDate": "2025-01-29T02:37:35.573Z",
+            "System.ChangedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.CommentCount": 0,
+            "System.Title": "Check open source code for vulnerabilities and licensing terms",
+            "System.BoardColumn": "To Do",
+            "System.BoardColumnDone": false,
+            "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+            "Microsoft.VSTS.Common.StateChangeDate": "2025-01-29T02:37:35.573Z",
+            "Microsoft.VSTS.Common.Priority": 2,
+            "Microsoft.VSTS.Scheduling.Effort": 0.0,
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column": "To Do",
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column.Done": false,
+            "System.Description": "Check open source code for vulnerabilities and licensing terms"
+        },
+        "_links": {
+            "self": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/5"
+            },
+            "workItemUpdates": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/5/updates"
+            },
+            "workItemRevisions": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/5/revisions"
+            },
+            "workItemComments": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/5/comments"
+            },
+            "html": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_workitems/edit/5"
+            },
+            "workItemType": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItemTypes/Issue"
+            },
+            "fields": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/fields"
+            }
+        },
+        "url": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/5"
+    },
+    {
+        "id": 6,
+        "rev": 1,
+        "fields": {
+            "System.AreaPath": "spacegamewebapp",
+            "System.TeamProject": "spacegamewebapp",
+            "System.IterationPath": "spacegamewebapp",
+            "System.WorkItemType": "Issue",
+            "System.State": "To Do",
+            "System.Reason": "Added to backlog",
+            "System.CreatedDate": "2025-01-29T02:37:35.907Z",
+            "System.CreatedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.ChangedDate": "2025-01-29T02:37:35.907Z",
+            "System.ChangedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.CommentCount": 0,
+            "System.Title": "Move model data to its own package",
+            "System.BoardColumn": "To Do",
+            "System.BoardColumnDone": false,
+            "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+            "Microsoft.VSTS.Common.StateChangeDate": "2025-01-29T02:37:35.907Z",
+            "Microsoft.VSTS.Common.Priority": 2,
+            "Microsoft.VSTS.Scheduling.Effort": 0.0,
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column": "To Do",
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column.Done": false,
+            "System.Description": "<div><span>Package and share common Model code</span> </div>"
+        },
+        "_links": {
+            "self": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/6"
+            },
+            "workItemUpdates": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/6/updates"
+            },
+            "workItemRevisions": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/6/revisions"
+            },
+            "workItemComments": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/6/comments"
+            },
+            "html": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_workitems/edit/6"
+            },
+            "workItemType": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItemTypes/Issue"
+            },
+            "fields": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/fields"
+            }
+        },
+        "url": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/6"
+    },
+    {
+        "id": 7,
+        "rev": 1,
+        "fields": {
+            "System.AreaPath": "spacegamewebapp",
+            "System.TeamProject": "spacegamewebapp",
+            "System.IterationPath": "spacegamewebapp",
+            "System.WorkItemType": "Issue",
+            "System.State": "To Do",
+            "System.Reason": "Added to backlog",
+            "System.CreatedDate": "2025-01-29T02:37:36.167Z",
+            "System.CreatedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.ChangedDate": "2025-01-29T02:37:36.167Z",
+            "System.ChangedBy": {
+                "displayName": "Paul Lee",
+                "url": "https://spsprodsbr1.vssps.visualstudio.com/A26ce3b14-24ac-4ec9-aeae-a0f99ea3a5f1/_apis/Identities/b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "_links": {
+                    "avatar": {
+                        "href": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+                    }
+                },
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM",
+                "imageUrl": "https://dev.azure.com/177204/_apis/GraphProfile/MemberAvatars/aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh",
+                "descriptor": "aad.YjJhN2ZjYTItY2UzZi03MDAzLWFmNWQtOGY3ZDkzNjU1OTVh"
+            },
+            "System.CommentCount": 0,
+            "System.Title": "Investigate hosted vs private build servers",
+            "System.BoardColumn": "To Do",
+            "System.BoardColumnDone": false,
+            "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+            "Microsoft.VSTS.Common.StateChangeDate": "2025-01-29T02:37:36.167Z",
+            "Microsoft.VSTS.Common.Priority": 2,
+            "Microsoft.VSTS.Scheduling.Effort": 0.0,
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column": "To Do",
+            "WEF_2F1EEECD3AD44F0DB132C080EF55858D_Kanban.Column.Done": false,
+            "System.Description": "<div><span>Proof of concept for a private build server</span><span><br></span> </div>"
+        },
+        "_links": {
+            "self": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/7"
+            },
+            "workItemUpdates": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/7/updates"
+            },
+            "workItemRevisions": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/7/revisions"
+            },
+            "workItemComments": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/7/comments"
+            },
+            "html": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_workitems/edit/7"
+            },
+            "workItemType": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItemTypes/Issue"
+            },
+            "fields": {
+                "href": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/fields"
+            }
+        },
+        "url": "https://dev.azure.com/177204/f3569e1c-3159-4d90-8cd7-7796bb818943/_apis/wit/workItems/7"
+    }
+]

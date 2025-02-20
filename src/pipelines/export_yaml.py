@@ -64,18 +64,18 @@ def export_yaml_pipeline(organization, project, personal_access_token, pipeline_
 
 def main():
     # Import the configuration variables
-    import config_yaml
+    import pipelines.config_export_yaml as config_export_yaml
     
     # Call the function to export the YAML pipeline
     export_yaml_pipeline(
-        config_yaml.organization, 
-        config_yaml.project, 
-        config_yaml.personal_access_token, 
-        config_yaml.pipeline_id, 
-        config_yaml.repository_name, 
-        config_yaml.yaml_path, 
-        config_yaml.branch_name, 
-        config_yaml.output_file
+        config_export_yaml.organization, 
+        config_export_yaml.project, 
+        config_export_yaml.personal_access_token, 
+        config_export_yaml.pipeline_id, 
+        config_export_yaml.repository_name, 
+        config_export_yaml.yaml_path, 
+        config_export_yaml.branch_name, 
+        config_export_yaml.output_file
     )
 
 if __name__ == '__main__':

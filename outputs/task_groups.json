@@ -1,0 +1,810 @@
+{
+    "count": 5,
+    "value": [
+        {
+            "tasks": [
+                {
+                    "environment": {},
+                    "displayName": "Copy Versioned Artifact to Workspace",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "targetType": "inline",
+                        "filePath": "",
+                        "arguments": "",
+                        "script": "$artifactDownloadPath=\"$(Agent.ReleaseDirectory)\\_DynamicsDeployment.CI\"\n\n$artifactRepoPath=\"$(Agent.ReleaseDirectory)\\_DynamicsDeployment-Repo\"\n$artifactPushPath = \"$artifactRepoPath\\DeploymentArtifacts\"\n\nif(!(Test-Path -path $artifactPushPath))  \n{ \n   New-Item -ItemType directory -Path $artifactPushPath\n}\n\nCopy-Item -Path \"$artifactDownloadPath\\*\" -Destination \"$artifactPushPath\" -Recurse -Force",
+                        "errorActionPreference": "stop",
+                        "warningPreference": "default",
+                        "informationPreference": "default",
+                        "verbosePreference": "default",
+                        "debugPreference": "default",
+                        "progressPreference": "silentlyContinue",
+                        "failOnStderr": "false",
+                        "showWarnings": "false",
+                        "ignoreLASTEXITCODE": "false",
+                        "pwsh": "false",
+                        "workingDirectory": "",
+                        "runScriptInSeparateScope": "false"
+                    },
+                    "task": {
+                        "id": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
+                        "versionSpec": "2.*",
+                        "definitionType": "task"
+                    }
+                },
+                {
+                    "environment": {},
+                    "displayName": "Push Artifacts to Git Repo",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "script": "git config user.email \"$(CommitUserEmailAddress)\"\ngit config user.name \"DynamicsDeployment Azure DevOps Build\"\ngit checkout $(GitBranch)\ngit pull\ngit add .\ngit commit -m \"DynamicsDeployment Artifact Commit\"\ngit push origin $(GitBranch)",
+                        "workingDirectory": "$(Agent.ReleaseDirectory)\\_EMBC-DFA-Repo\\DeploymentArtifacts",
+                        "failOnStderr": "false"
+                    },
+                    "task": {
+                        "id": "d9bafed4-0b18-4f58-968d-86655b4d2ce9",
+                        "versionSpec": "2.*",
+                        "definitionType": "task"
+                    }
+                }
+            ],
+            "runsOn": [
+                "Agent",
+                "DeploymentGroup"
+            ],
+            "revision": 1,
+            "createdBy": {
+                "displayName": "Paul Lee",
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM"
+            },
+            "createdOn": "2023-09-15T00:26:47.07Z",
+            "modifiedBy": {
+                "displayName": "Paul Lee",
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM"
+            },
+            "modifiedOn": "2023-09-15T00:26:47.07Z",
+            "id": "64f022d4-a995-4777-9126-04c784d25723",
+            "name": "DynamicsDeployment Store Artifacts to Azure Repo",
+            "version": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0,
+                "isTest": false
+            },
+            "iconUrl": "/AzDevOps/_static/tfs/Dev17.M153.5/_content/icon-meta-task.png",
+            "friendlyName": "DynamicsDeployment Store Artifacts to Azure Repo",
+            "description": "This task group saves the promoted artifact to the repository",
+            "category": "Deploy",
+            "definitionType": "metaTask",
+            "author": "Selvan, Suganth AG:EX",
+            "demands": [],
+            "groups": [],
+            "inputs": [
+                {
+                    "aliases": [],
+                    "options": {},
+                    "properties": {},
+                    "name": "CommitUserEmailAddress",
+                    "label": "CommitUserEmailAddress",
+                    "defaultValue": "",
+                    "required": true,
+                    "type": "string",
+                    "helpMarkDown": "",
+                    "groupName": ""
+                },
+                {
+                    "aliases": [],
+                    "options": {},
+                    "properties": {},
+                    "name": "GitBranch",
+                    "label": "GitBranch",
+                    "defaultValue": "",
+                    "required": true,
+                    "type": "string",
+                    "helpMarkDown": "",
+                    "groupName": ""
+                }
+            ],
+            "satisfies": [],
+            "sourceDefinitions": [],
+            "dataSourceBindings": [],
+            "instanceNameFormat": "Task group: DynamicsDeployment Store Artifacts to Azure Repo $(CommitUserEmailAddress)",
+            "preJobExecution": {},
+            "execution": {},
+            "postJobExecution": {},
+            "_buildConfigMapping": {}
+        },
+        {
+            "tasks": [
+                {
+                    "environment": {},
+                    "displayName": "Power DevOps Tool Installer",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "nugetFeed": "official",
+                        "nugetSource": "https://api.nuget.org/v3/index.json",
+                        "nugetUsername": "",
+                        "nugetPassword": "",
+                        "nugetUseProxy": "true",
+                        "psFeed": "official",
+                        "psSource": "https://www.powershellgallery.com/api/v2",
+                        "psUsername": "",
+                        "psPassword": "",
+                        "psUseProxy": "true",
+                        "coreToolsVersion": "",
+                        "crmConnectorVersion": "",
+                        "packageDeploymentVersion": "",
+                        "onlineAPIVersion": "",
+                        "checkerVersion": "",
+                        "configMigrationVersion": "",
+                        "powerAppsAdminVersion": "",
+                        "powerAppsVersion": "",
+                        "powerAppsCLIVersion": "",
+                        "msalPSVersion": "",
+                        "mgUsersVersion": "",
+                        "mgGroupsVersion": ""
+                    },
+                    "task": {
+                        "id": "04ad1c72-5e49-4686-8a3a-dda6948b0fcd",
+                        "versionSpec": "12.*",
+                        "definitionType": "task"
+                    }
+                },
+                {
+                    "environment": {},
+                    "displayName": "Get Solution Details: $(DynamicsDeployment.SolutionName)",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "crmConnectionString": "$(ConnectionStringFrom)",
+                        "solutionName": "$(DynamicsDeployment.SolutionName)",
+                        "crmConnectionTimeout": "120",
+                        "existsVariableName": "DynamicsDeployment.SolutionExists",
+                        "versionVariableName": "DynamicsDeployment.SolutionVersion",
+                        "displayVariableName": "DynamicsDeployment.SolutionDisplayName"
+                    },
+                    "task": {
+                        "id": "4e476451-a01b-4b86-ab9e-658d496f9b17",
+                        "versionSpec": "12.*",
+                        "definitionType": "task"
+                    }
+                },
+                {
+                    "environment": {},
+                    "displayName": "Create Versioned Artifact Publish Folder: $(DynamicsDeployment.SolutionName)",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "targetType": "inline",
+                        "filePath": "",
+                        "arguments": "",
+                        "script": "$artifactDirectoryPath=\"$(Build.ArtifactStagingDirectory)\\$(DynamicsDeployment.SolutionVersion)\"\n\nif(!(Test-Path -path $artifactDirectoryPath))  \n{ \n   New-Item -ItemType directory -Path $artifactDirectoryPath\n}\n\necho \"$(DynamicsDeployment.SolutionVersion)\" | ConvertTo-Json | Out-File \"version.json\"\nCopy-Item -Path \"version.json\" -Destination \"$(Build.ArtifactStagingDirectory)\" -Recurse -Force",
+                        "errorActionPreference": "stop",
+                        "warningPreference": "default",
+                        "informationPreference": "default",
+                        "verbosePreference": "default",
+                        "debugPreference": "default",
+                        "progressPreference": "silentlyContinue",
+                        "failOnStderr": "false",
+                        "showWarnings": "false",
+                        "ignoreLASTEXITCODE": "false",
+                        "pwsh": "false",
+                        "workingDirectory": "",
+                        "runScriptInSeparateScope": "false"
+                    },
+                    "task": {
+                        "id": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
+                        "versionSpec": "2.*",
+                        "definitionType": "task"
+                    }
+                },
+                {
+                    "environment": {},
+                    "displayName": "Export CSRS Solution: $(DynamicsDeployment.SolutionName)",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "crmConnectionString": "$(ConnectionStringFrom)",
+                        "solutionName": "$(DynamicsDeployment.SolutionName)",
+                        "exportManaged": "true",
+                        "exportUnmanaged": "true",
+                        "targetVersion": "",
+                        "includeVersionInSolutionFile": "false",
+                        "outputPath": "$(Build.ArtifactStagingDirectory)\\$(DynamicsDeployment.SolutionVersion)",
+                        "crmConnectionTimeout": "120",
+                        "useAsyncMode": "false",
+                        "asyncWaitTimeout": "900",
+                        "exportAutoNumberingSettings": "false",
+                        "exportCalendarSettings": "false",
+                        "exportCustomizationSettings": "false",
+                        "exportEmailTrackingSettings": "false",
+                        "exportExternalApplications": "false",
+                        "exportGeneralSettings": "false",
+                        "exportIsvConfig": "false",
+                        "exportMarketingSettings": "false",
+                        "exportOutlookSynchronizationSettings": "false",
+                        "exportRelationshipRoles": "false",
+                        "exportSales": "false"
+                    },
+                    "task": {
+                        "id": "015e2e58-9c77-4cbc-a9c1-a28158165365",
+                        "versionSpec": "12.*",
+                        "definitionType": "task"
+                    }
+                },
+                {
+                    "environment": {},
+                    "displayName": "Publish Artifact: $(DynamicsDeployment.SolutionName)",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "PathtoPublish": "$(Build.ArtifactStagingDirectory)",
+                        "ArtifactName": "$(DynamicsDeployment.SolutionName)",
+                        "ArtifactType": "Container",
+                        "MaxArtifactSize": "0",
+                        "TargetPath": "$(System.DefaultWorkingDirectory)",
+                        "Parallel": "true",
+                        "ParallelCount": "8",
+                        "StoreAsTar": "false"
+                    },
+                    "task": {
+                        "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+                        "versionSpec": "1.*",
+                        "definitionType": "task"
+                    }
+                }
+            ],
+            "runsOn": [
+                "Agent",
+                "DeploymentGroup"
+            ],
+            "revision": 2,
+            "createdBy": {
+                "displayName": "Paul Lee",
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM"
+            },
+            "createdOn": "2023-09-15T00:20:15.193Z",
+            "modifiedBy": {
+                "displayName": "Paul Lee",
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM"
+            },
+            "modifiedOn": "2023-09-15T00:20:39.213Z",
+            "comment": "",
+            "id": "7c0a1ef5-aeb4-4a63-821b-0e11990172ff",
+            "name": "DynamicsDeployment Export and Publish Task",
+            "version": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0,
+                "isTest": false
+            },
+            "iconUrl": "/AzDevOps/_static/tfs/Dev17.M153.5/_content/icon-meta-task.png",
+            "friendlyName": "DynamicsDeployment Export and Publish Task",
+            "description": "This task group exports and publishes the provided dynamics solution to be used for deployments",
+            "category": "Package",
+            "definitionType": "metaTask",
+            "author": "Selvan, Suganth AG:EX",
+            "demands": [],
+            "groups": [],
+            "inputs": [
+                {
+                    "aliases": [],
+                    "options": {},
+                    "properties": {},
+                    "name": "ConnectionStringFrom",
+                    "label": "ConnectionStringFrom",
+                    "defaultValue": "",
+                    "required": true,
+                    "type": "string",
+                    "helpMarkDown": "For more information on format check the [docs](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/xrm-tooling/use-connection-strings-xrm-tooling-connect)",
+                    "groupName": ""
+                },
+                {
+                    "aliases": [],
+                    "options": {},
+                    "properties": {},
+                    "name": "DynamicsDeployment.SolutionName",
+                    "label": "DynamicsDeployment.SolutionName",
+                    "defaultValue": "",
+                    "required": true,
+                    "type": "string",
+                    "helpMarkDown": "The unique name of the solution you want to export",
+                    "groupName": ""
+                },
+                {
+                    "aliases": [],
+                    "options": {},
+                    "properties": {},
+                    "name": "DynamicsDeployment.SolutionVersion",
+                    "label": "DynamicsDeployment.SolutionVersion",
+                    "defaultValue": "",
+                    "required": true,
+                    "type": "string",
+                    "helpMarkDown": "",
+                    "groupName": ""
+                }
+            ],
+            "satisfies": [],
+            "sourceDefinitions": [],
+            "dataSourceBindings": [],
+            "instanceNameFormat": "Task group: DynamicsDeployment Export and Publish Task $(ConnectionStringFrom)",
+            "preJobExecution": {},
+            "execution": {},
+            "postJobExecution": {},
+            "_buildConfigMapping": {}
+        },
+        {
+            "tasks": [
+                {
+                    "environment": {},
+                    "displayName": "Power DevOps Tool Installer",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "nugetFeed": "official",
+                        "nugetSource": "https://api.nuget.org/v3/index.json",
+                        "nugetUsername": "",
+                        "nugetPassword": "",
+                        "nugetUseProxy": "true",
+                        "psFeed": "official",
+                        "psSource": "https://www.powershellgallery.com/api/v2",
+                        "psUsername": "",
+                        "psPassword": "",
+                        "psUseProxy": "true",
+                        "coreToolsVersion": "",
+                        "crmConnectorVersion": "",
+                        "packageDeploymentVersion": "",
+                        "onlineAPIVersion": "",
+                        "checkerVersion": "",
+                        "configMigrationVersion": "",
+                        "powerAppsAdminVersion": "",
+                        "powerAppsVersion": "",
+                        "powerAppsCLIVersion": "",
+                        "msalPSVersion": "",
+                        "mgUsersVersion": "",
+                        "mgGroupsVersion": ""
+                    },
+                    "task": {
+                        "id": "04ad1c72-5e49-4686-8a3a-dda6948b0fcd",
+                        "versionSpec": "12.*",
+                        "definitionType": "task"
+                    }
+                },
+                {
+                    "environment": {},
+                    "displayName": "Get Solution Version: $(DynamicsDeployment.SolutionName)",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "targetType": "inline",
+                        "filePath": "",
+                        "arguments": "",
+                        "script": "$version = Get-Content \"version.json\" | ConvertFrom-Json\nWrite-Output(\"##vso[task.setvariable variable=SolutionVersion]$version\")\necho \"SolutionVersion to be deployed is: $version\"",
+                        "errorActionPreference": "stop",
+                        "warningPreference": "default",
+                        "informationPreference": "default",
+                        "verbosePreference": "default",
+                        "debugPreference": "default",
+                        "progressPreference": "silentlyContinue",
+                        "failOnStderr": "false",
+                        "showWarnings": "false",
+                        "ignoreLASTEXITCODE": "false",
+                        "pwsh": "false",
+                        "workingDirectory": "$(System.DefaultWorkingDirectory)/_DynamicsDeployment-CI/$(DynamicsDeployment.SolutionName)/",
+                        "runScriptInSeparateScope": "false"
+                    },
+                    "task": {
+                        "id": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
+                        "versionSpec": "2.*",
+                        "definitionType": "task"
+                    }
+                },
+                {
+                    "environment": {},
+                    "displayName": "Import Solution: $(DynamicsDeployment.SolutionName)",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "crmConnectionString": "$(ConnectionStringTo)",
+                        "solutionFile": "$(System.DefaultWorkingDirectory)/_DynamicsDeployment-CI/$(DynamicsDeployment.SolutionName)/$(SolutionVersion)/$(DynamicsDeployment.SolutionName)_managed.zip",
+                        "publishWorkflows": "true",
+                        "overwriteUnmanagedCustomizations": "false",
+                        "skipProductUpdateDependencies": "false",
+                        "convertToManaged": "false",
+                        "holdingSolution": "false",
+                        "override": "true",
+                        "useAsyncMode": "true",
+                        "asyncWaitTimeout": "900",
+                        "logsDirectory": "",
+                        "logFileName": "",
+                        "crmConnectionTimeout": "120"
+                    },
+                    "task": {
+                        "id": "4455576d-d40a-4234-ad75-3d7ff40ec76e",
+                        "versionSpec": "12.*",
+                        "definitionType": "task"
+                    }
+                }
+            ],
+            "runsOn": [
+                "Agent",
+                "DeploymentGroup"
+            ],
+            "revision": 2,
+            "createdBy": {
+                "displayName": "Paul Lee",
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM"
+            },
+            "createdOn": "2023-09-15T00:08:50.263Z",
+            "modifiedBy": {
+                "displayName": "Paul Lee",
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM"
+            },
+            "modifiedOn": "2023-09-15T00:10:35.323Z",
+            "comment": "",
+            "id": "d4514262-83bf-4687-a567-a3f5da3fb36c",
+            "name": "Dynamics Solutions Import and Deploy Task",
+            "version": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0,
+                "isTest": false
+            },
+            "iconUrl": "/AzDevOps/_static/tfs/Dev17.M153.5/_content/icon-meta-task.png",
+            "friendlyName": "Dynamics Solutions Import and Deploy Task",
+            "description": "This task group import and deploys the provided dynamics solution to the configured environment. It also saves the promoted artifact to the repository",
+            "category": "Deploy",
+            "definitionType": "metaTask",
+            "author": "Selvan, Suganth AG:EX",
+            "demands": [],
+            "groups": [],
+            "inputs": [
+                {
+                    "aliases": [],
+                    "options": {},
+                    "properties": {},
+                    "name": "ConnectionStringTo",
+                    "label": "ConnectionStringTo",
+                    "defaultValue": "",
+                    "required": true,
+                    "type": "string",
+                    "helpMarkDown": "More information on [format](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/xrm-tooling/use-connection-strings-xrm-tooling-connect#connection-string-parameters)",
+                    "groupName": ""
+                },
+                {
+                    "aliases": [],
+                    "options": {},
+                    "properties": {},
+                    "name": "DynamicsDeployment.SolutionName",
+                    "label": "DynamicsDeployment.SolutionName",
+                    "defaultValue": "",
+                    "required": true,
+                    "type": "string",
+                    "helpMarkDown": "",
+                    "groupName": ""
+                },
+                {
+                    "aliases": [],
+                    "options": {},
+                    "properties": {},
+                    "name": "SolutionVersion",
+                    "label": "SolutionVersion",
+                    "defaultValue": "",
+                    "required": true,
+                    "type": "string",
+                    "helpMarkDown": "",
+                    "groupName": ""
+                }
+            ],
+            "satisfies": [],
+            "sourceDefinitions": [],
+            "dataSourceBindings": [],
+            "instanceNameFormat": "Task group: Dynamics Solutions Import and Deploy Task $(ConnectionStringTo)",
+            "preJobExecution": {},
+            "execution": {},
+            "postJobExecution": {},
+            "_buildConfigMapping": {}
+        },
+        {
+            "tasks": [
+                {
+                    "environment": {},
+                    "displayName": "Power DevOps Tool Installer",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "nugetFeed": "official",
+                        "nugetSource": "https://api.nuget.org/v3/index.json",
+                        "nugetUsername": "",
+                        "nugetPassword": "",
+                        "nugetUseProxy": "true",
+                        "psFeed": "official",
+                        "psSource": "https://www.powershellgallery.com/api/v2",
+                        "psUsername": "",
+                        "psPassword": "",
+                        "psUseProxy": "true",
+                        "coreToolsVersion": "",
+                        "crmConnectorVersion": "",
+                        "packageDeploymentVersion": "",
+                        "onlineAPIVersion": "",
+                        "checkerVersion": "",
+                        "configMigrationVersion": "",
+                        "powerAppsAdminVersion": "",
+                        "powerAppsVersion": "",
+                        "powerAppsCLIVersion": "",
+                        "msalPSVersion": "",
+                        "mgUsersVersion": "",
+                        "mgGroupsVersion": ""
+                    },
+                    "task": {
+                        "id": "04ad1c72-5e49-4686-8a3a-dda6948b0fcd",
+                        "versionSpec": "12.*",
+                        "definitionType": "task"
+                    }
+                },
+                {
+                    "environment": {},
+                    "displayName": "Ping Environment",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "crmConnectionString": "$(ConnectionString.From)"
+                    },
+                    "task": {
+                        "id": "d8587a60-cd25-11e6-a324-f3fd298c325e",
+                        "versionSpec": "12.*",
+                        "definitionType": "task"
+                    }
+                },
+                {
+                    "environment": {},
+                    "displayName": "Publish Customizations",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "crmConnectionString": "$(ConnectionString.From)",
+                        "crmConnectionTimeout": "120"
+                    },
+                    "task": {
+                        "id": "f64d3db3-f19a-41dd-bdb8-f8f0e60a4bb1",
+                        "versionSpec": "12.*",
+                        "definitionType": "task"
+                    }
+                }
+            ],
+            "runsOn": [
+                "Agent",
+                "DeploymentGroup"
+            ],
+            "revision": 2,
+            "createdBy": {
+                "displayName": "Paul Lee",
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM"
+            },
+            "createdOn": "2023-09-15T00:01:11.743Z",
+            "modifiedBy": {
+                "displayName": "Paul Lee",
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM"
+            },
+            "modifiedOn": "2023-09-15T00:01:41.877Z",
+            "comment": "",
+            "id": "737f05f9-f3c1-4c9e-b494-609e780f3dcb",
+            "name": "Export PreRequisite",
+            "version": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0,
+                "isTest": false
+            },
+            "iconUrl": "/AzDevOps/_static/tfs/Dev17.M153.5/_content/icon-meta-task.png",
+            "friendlyName": "Export PreRequisite",
+            "description": "One Time Tasks for Build",
+            "category": "Build",
+            "definitionType": "metaTask",
+            "author": "Selvan, Suganth AG:EX",
+            "demands": [],
+            "groups": [],
+            "inputs": [
+                {
+                    "aliases": [],
+                    "options": {},
+                    "properties": {},
+                    "name": "ConnectionString.From",
+                    "label": "ConnectionString.From",
+                    "defaultValue": "",
+                    "required": true,
+                    "type": "string",
+                    "helpMarkDown": "More information on [format](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/xrm-tooling/use-connection-strings-xrm-tooling-connect#connection-string-parameters)",
+                    "groupName": ""
+                }
+            ],
+            "satisfies": [],
+            "sourceDefinitions": [],
+            "dataSourceBindings": [],
+            "instanceNameFormat": "Task group: Export PreRequisite $(ConnectionString.From)",
+            "preJobExecution": {},
+            "execution": {},
+            "postJobExecution": {},
+            "_buildConfigMapping": {}
+        },
+        {
+            "tasks": [
+                {
+                    "environment": {},
+                    "displayName": "Power DevOps Tool Installer",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "nugetFeed": "official",
+                        "nugetSource": "https://api.nuget.org/v3/index.json",
+                        "nugetUsername": "",
+                        "nugetPassword": "",
+                        "nugetUseProxy": "true",
+                        "psFeed": "official",
+                        "psSource": "https://www.powershellgallery.com/api/v2",
+                        "psUsername": "",
+                        "psPassword": "",
+                        "psUseProxy": "true",
+                        "coreToolsVersion": "",
+                        "crmConnectorVersion": "",
+                        "packageDeploymentVersion": "",
+                        "onlineAPIVersion": "",
+                        "checkerVersion": "",
+                        "configMigrationVersion": "",
+                        "powerAppsAdminVersion": "",
+                        "powerAppsVersion": "",
+                        "powerAppsCLIVersion": "",
+                        "msalPSVersion": "",
+                        "mgUsersVersion": "",
+                        "mgGroupsVersion": ""
+                    },
+                    "task": {
+                        "id": "04ad1c72-5e49-4686-8a3a-dda6948b0fcd",
+                        "versionSpec": "12.*",
+                        "definitionType": "task"
+                    }
+                },
+                {
+                    "environment": {},
+                    "displayName": "Ping Environment",
+                    "alwaysRun": false,
+                    "continueOnError": false,
+                    "condition": "succeeded()",
+                    "enabled": true,
+                    "timeoutInMinutes": 0,
+                    "retryCountOnTaskFailure": 0,
+                    "inputs": {
+                        "crmConnectionString": "$(ConnectionString.To)"
+                    },
+                    "task": {
+                        "id": "d8587a60-cd25-11e6-a324-f3fd298c325e",
+                        "versionSpec": "12.*",
+                        "definitionType": "task"
+                    }
+                }
+            ],
+            "runsOn": [
+                "Agent",
+                "DeploymentGroup"
+            ],
+            "revision": 2,
+            "createdBy": {
+                "displayName": "Paul Lee",
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM"
+            },
+            "createdOn": "2023-09-15T00:00:20.063Z",
+            "modifiedBy": {
+                "displayName": "Paul Lee",
+                "id": "b2a7fca2-ce3f-6003-af5d-8f7d9365595a",
+                "uniqueName": "177204@NTTDATA.COM"
+            },
+            "modifiedOn": "2023-09-15T00:01:57.64Z",
+            "comment": "",
+            "id": "88605bb9-03aa-4f3a-851f-65ec4445e2cc",
+            "name": "Import PreRequisite",
+            "version": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0,
+                "isTest": false
+            },
+            "iconUrl": "/AzDevOps/_static/tfs/Dev17.M153.5/_content/icon-meta-task.png",
+            "friendlyName": "Import PreRequisite",
+            "description": "One Time Tasks for Import",
+            "category": "Deploy",
+            "definitionType": "metaTask",
+            "author": "Selvan, Suganth AG:EX",
+            "demands": [],
+            "groups": [],
+            "inputs": [
+                {
+                    "aliases": [],
+                    "options": {},
+                    "properties": {},
+                    "name": "ConnectionString.To",
+                    "label": "ConnectionString.To",
+                    "defaultValue": "",
+                    "required": true,
+                    "type": "string",
+                    "helpMarkDown": "More information on [format](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/xrm-tooling/use-connection-strings-xrm-tooling-connect#connection-string-parameters)",
+                    "groupName": ""
+                }
+            ],
+            "satisfies": [],
+            "sourceDefinitions": [],
+            "dataSourceBindings": [],
+            "instanceNameFormat": "Task group: Import PreRequisite $(ConnectionString.To)",
+            "preJobExecution": {},
+            "execution": {},
+            "postJobExecution": {},
+            "_buildConfigMapping": {}
+        }
+    ]
+}

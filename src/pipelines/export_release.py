@@ -1,7 +1,7 @@
 import json
 import requests
 from base64 import b64encode
-import config_release
+import pipelines.config_export_release as config_export_release
 
 def export_release_pipeline(organization, project, personal_access_token, output_file):
     # Encode the personal access token
@@ -35,14 +35,14 @@ def export_release_pipeline(organization, project, personal_access_token, output
 
 def main():
     # Import the configuration variables
-    import config_release
+    import pipelines.config_export_release as config_export_release
     
     # Call the function to export the release pipeline
     export_release_pipeline(
-        config_release.organization, 
-        config_release.project, 
-        config_release.personal_access_token, 
-        config_release.output_file
+        config_export_release.organization, 
+        config_export_release.project, 
+        config_export_release.personal_access_token, 
+        config_export_release.output_file
     )
 
 if __name__ == '__main__':
